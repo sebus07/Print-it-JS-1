@@ -106,9 +106,9 @@ header {
 
 #banner {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
-	justify-content: center;
+
 	width: 100%;
 	min-height: 470px;
 	position: relative;
@@ -133,23 +133,25 @@ header {
 	right: 10px;
 }
 /* Gestion des points du carrousel */
-.dots {
+.dots-container {
 	position: absolute;
 	bottom: 40px;
 	display: flex;
-}
-.dot {
+  }
+  
+  .dot {
 	margin-inline: 5px;
 	width: 13px;
 	height: 13px;
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
-}
-.dot_selected {
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .dot.active {
 	background-color: #fff;
-}
+  }
 /* Fin du code CSS pour le carousel */
 #banner p {
 	font-family: 'Roboto Slab', sans-serif;
