@@ -15,6 +15,9 @@ console.log(clicZoneLeft);
 let dotsContainer = document.querySelector(".dots-container");
 console.log(dotsContainer);
 
+let dots = dotsContainer.querySelectorAll('.dot');
+console.log(dots);
+
 clicZoneRight.addEventListener("click", () => {
     // Mettre à jour l'index de la diapositive
     currentIndex = (currentIndex + 1) % slides.length;
