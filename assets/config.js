@@ -1,5 +1,24 @@
-let SlidesZoneImg = document.querySelector(".banner-img");
-console.log(SlidesZoneImg);
+const slides = [
+    {
+        "image": "slide1.jpg",
+        "tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
+    },
+    {
+        "image": "slide2.jpg",
+        "tagLine": "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+    },
+    {
+        "image": "slide3.jpg",
+        "tagLine": "Grand choix de couleurs <span>de CMJN aux pantones</span>"
+    },
+    {
+        "image": "slide4.png",
+        "tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
+    }
+];
+
+let slidesZoneImg = document.querySelector(".banner-img");
+console.log(slidesZoneImg);
 
 let tagLine = document.querySelector("#banner p");
 console.log(tagLine);
@@ -19,11 +38,11 @@ let dots = dotsContainer.querySelectorAll('.dot');
 console.log(dots);
 
 clicZoneRight.addEventListener("click", () => {
-    // Mettre à jour l'index de la diapositive
+    // Mettre à jour l'index de la diapositive avec prise en compte des valeurs négatives
     currentIndex = (currentIndex + 1) % slides.length;
 
     // Mettre à jour l'image et le texte et le dots par la fonction
-    SlidesZoneImg.setAttribute("src", `./assets/images/slideshow/${slides[currentIndex].image}`);
+    slidesZoneImg.setAttribute("src", `./assets/images/slideshow/${slides[currentIndex].image}`);
     tagLine.innerHTML = slides[currentIndex].tagLine;
     updateDots();
 });
@@ -33,8 +52,7 @@ clicZoneLeft.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
 
     // Mettre à jour l'image et le texte et le dots par la fonction
-    SlidesZoneImg.setAttribute("src", `./assets/images/slideshow/${slides[currentIndex].image}`);
+    slidesZoneImg.setAttribute("src", `./assets/images/slideshow/${slides[currentIndex].image}`);
     tagLine.innerHTML = slides[currentIndex].tagLine;
     updateDots();
 });
-
